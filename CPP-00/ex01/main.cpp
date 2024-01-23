@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 05:47:19 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/23 06:51:12 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/23 23:30:13 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 int	main(void)
 {
 	PhoneBook	super_pb;
-	bool	exit_status;
+	bool	should_exit;
 	std::string	str;
 
-	exit_status = true;
-	while (exit_status)
+	should_exit = false;
+	while (!should_exit)
 	{
-		std::cin.clear();
-		std::clearerr(stdin);
 		std::cout << "Hi! This is your Amazing PhoneBook," << std::endl;
 		std::cout << "-Please provide an action (ADD/SEARCH/EXIT)" << std::endl;
 		std::cout << "> " << std::flush;
@@ -32,7 +30,7 @@ int	main(void)
 			std::cout << std::endl << "> " << std::flush;
 		}
 		if (str == "EXIT")
-			exit_status = false;
+			should_exit = true;
 		else if (str == "ADD")
 			super_pb.add_contact();
 		else if (str == "SEARCH")

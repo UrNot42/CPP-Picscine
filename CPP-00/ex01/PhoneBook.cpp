@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 02:11:02 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/23 06:48:05 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/23 23:29:35 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,23 @@ void	PhoneBook::print_contacts() {
 }
 
 void	PhoneBook::print_one_contact(size_t index) {
-	if (index >= 1 && index <= 8)
+	if (index >= 1 && index <= this->size)
 		this->contacts[index - 1].print_contact_details();
 	else
 		std::cout << "SORRY, but contact " << index << " doesn't exist!" << std::endl;
 }
 
 void	PhoneBook::search_contacts() {
-	print_contacts();
-	size_t	index;
+	size_t		index;
+	std::string	str;
 
+	print_contacts();
 	std::cout << "Contact Index> " << std::flush;
-	std::cin >> index;
+	while(!std::getline(std::cin, str) || str.size() != 1 || !isdigit(str[0]) || str[0] == '0' || str[0] == '9') {
+		std::cin.clear();
+		std::clearerr(stdin);
+		std::cout << "Please provide a valid Index (1-8)> " << std::flush;
+	}
+	index = str[0] - '0';
 	print_one_contact(index);
-	std::cin.clear();
-	std::clearerr(stdin);
 }
