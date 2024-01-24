@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 02:11:02 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/23 23:29:35 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:46:38 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	PhoneBook::search_contacts() {
 	while(!std::getline(std::cin, str) || str.size() != 1 || !isdigit(str[0]) || str[0] == '0' || str[0] == '9') {
 		std::cin.clear();
 		std::clearerr(stdin);
-		std::cout << "Please provide a valid Index (1-8)> " << std::flush;
+		std::cout << std::endl << "Please provide a valid Index (1-8)> " << std::flush;
 	}
 	index = str[0] - '0';
 	print_one_contact(index);
