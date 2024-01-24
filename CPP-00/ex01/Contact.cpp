@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 00:21:42 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/23 11:06:14 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/24 20:04:37 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ static std::string	prompt(const char *display) {
 }
 
 void	Contact::fill_contact() {
-	this->first_name = prompt("What is your first Name");
-	this->last_name = prompt("What is your last Name");
-	this->nickname = prompt("What is your Nickname");
-	this->phone_number = prompt("What is your Phone Number");
-	this->darkest_secret = prompt("And what is your darkest secret");
+	this->first_name = prompt("(1) Contact first Name");
+	this->last_name = prompt("(2) Contact last Name");
+	this->nickname = prompt("(3) Contact Nickname");
+	this->phone_number = prompt("(4) Contact Phone Number");
+	this->darkest_secret = prompt("(5) And contact's darkest secret");
 }
 
 static void	display_element(std::string str)
