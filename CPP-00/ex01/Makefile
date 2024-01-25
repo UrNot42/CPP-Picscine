@@ -1,12 +1,11 @@
 NAME 				=	Contact_Manager
 
 CC					=	c++
-CPPFLAGS			=	-std=c++98
+CPPFLAGS			=	-Wall -Wextra -Werror $(VERSIONFLAG)
+VERSIONFLAG			=	-std=c++98
 SRC_DIR				=	./
 OBJ_DIR				=	.build/
-LIB_DIR				=	lib/
 RM					=	rm -f
-
 
 SRC					=	Contact.cpp \
 						PhoneBook.cpp \
