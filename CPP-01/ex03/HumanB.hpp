@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:53:05 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/25 18:25:48 by ulevallo         ###   ########.fr       */
+/*   Created: 2024/01/28 18:57:39 by ulevallo          #+#    #+#             */
+/*   Updated: 2024/01/28 19:33:59 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include "Weapon.hpp"
 
-class Zombie {
+class HumanB {
 public:
-	Zombie( std::string name );
-	~Zombie();
-	void	announce(void);
+	HumanB(std::string name);
+	void	setWeapon(Weapon &equipement);
+	void	attack();
 private:
 	std::string	name;
+	Weapon*	equipement;
 };

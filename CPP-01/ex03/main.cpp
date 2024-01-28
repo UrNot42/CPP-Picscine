@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:53:05 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/25 18:25:48 by ulevallo         ###   ########.fr       */
+/*   Created: 2024/01/28 18:41:22 by ulevallo          #+#    #+#             */
+/*   Updated: 2024/01/28 21:02:14 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-#include <iostream>
+int	main() {
+{
+	Weapon	club = Weapon("crude spiked club");
 
-class Zombie {
-public:
-	Zombie( std::string name );
-	~Zombie();
-	void	announce(void);
-private:
-	std::string	name;
-};
+	HumanA bob("Bob", club);
+	bob.attack();
+	club.setType("some other type of club");
+	bob.attack();
+}
+{
+	Weapon	club = Weapon("crude spiked club");
+
+	HumanB jim("Jim");
+	jim.attack();
+	jim.setWeapon(club);
+	jim.attack();
+	club.setType("some other type of club");
+	jim.attack();
+}
+return 0;
+}
