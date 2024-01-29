@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 18:42:13 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/28 18:59:35 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:20:36 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Weapon::Weapon(std::string type) : type(type) {}
 
-const std::string&	Weapon::getType() {
+const std::string& Weapon::getType() {
 	const std::string&	typeREF = this->type;
 	return typeREF;
 }

@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 21:46:25 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/29 00:45:39 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:31:48 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	my_sed(std::string filename, std::string s1, std::string s2) {
 	}
 
 	std::string line;
-	while (std::getline(input, line))
+	while (!s1.empty() && std::getline(input, line))
 	{
 		std::string::size_type pos = 0;
 		while ((pos = line.find(s1, pos)) != std::string::npos)
