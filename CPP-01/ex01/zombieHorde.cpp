@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 17:41:19 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/26 10:54:10 by ulevallo         ###   ########.fr       */
+/*   Created: 2024/01/28 17:44:40 by ulevallo          #+#    #+#             */
+/*   Updated: 2024/01/28 18:11:20 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main() {
-	Zombie*	zombie;
+Zombie*	zombieHorde( int N, std::string name ) {
+	Zombie*	zombie = new Zombie[N];
 
-	zombie = newZombie("Foo");
-	zombie->announce();
-	delete zombie;
-	randomChump("Bar");
+	for (int i = 0; i < N; i++)
+		zombie[i].setName(name);
+	return zombie;
 }

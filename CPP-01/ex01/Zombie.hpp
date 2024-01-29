@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 17:41:19 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/26 10:54:10 by ulevallo         ###   ########.fr       */
+/*   Created: 2024/01/24 15:53:05 by ulevallo          #+#    #+#             */
+/*   Updated: 2024/01/28 18:19:04 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-int	main() {
-	Zombie*	zombie;
+#include <iostream>
 
-	zombie = newZombie("Foo");
-	zombie->announce();
-	delete zombie;
-	randomChump("Bar");
-}
+class Zombie {
+public:
+	Zombie();
+	Zombie(std::string name);
+	~Zombie();
+	void	setName(std::string name);
+	void	announce(void);
+private:
+	std::string	name;
+};
+
+Zombie*	zombieHorde( int N, std::string name );
