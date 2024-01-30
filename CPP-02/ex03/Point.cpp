@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:54:13 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/30 18:44:02 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/30 18:53:27 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ Point &Point::operator=(const Point &other)
 	if (this == &other)
 		return *this;
 
-	x = other.x;
-	y = other.y;
+	const_cast<Fixed &>(this->x) = other.x;
+	const_cast<Fixed &>(this->y) = other.y;
 
 	return *this;
 }
