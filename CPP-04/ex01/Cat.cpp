@@ -6,19 +6,19 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 04:59:35 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/31 12:14:35 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/31 12:10:50 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : AAnimal::AAnimal() {
+Cat::Cat() : Animal::Animal() {
 	std::cout << "Cat Default constructor called" << std::endl;
 	this->type = "Cat";
 	this->blob = new Brain();
 }
 
-Cat::Cat( const Cat &other ) : AAnimal::AAnimal(other) {
+Cat::Cat( const Cat &other ) : Animal::Animal(other) {
 	std::cout << "Cat Copy constructor called" << std::endl;
 	this->type = other.type;
 	this->blob = new Brain();
