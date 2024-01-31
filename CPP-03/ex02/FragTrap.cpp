@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 02:03:00 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/31 02:34:05 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/31 03:37:51 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ FragTrap::FragTrap( std::string name ) : ClapTrap::ClapTrap(name) {
 FragTrap::FragTrap( const FragTrap &other ) {
 	std::cout << "FragTrap Copy constructor called" << std::endl;
 
-	_name = other._name;
-	_hitPoints = other._hitPoints;
-	_energyPoints = other._energyPoints;
-	_attackDamage = other._attackDamage;
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage = other._attackDamage;
 }
 
 FragTrap::~FragTrap() {
@@ -47,10 +47,10 @@ FragTrap &	FragTrap::operator=( const FragTrap &other ) {
 
 	if (this != &other)
 	{
-		_name = other._name;
-		_hitPoints = other._hitPoints;
-		_energyPoints = other._energyPoints;
-		_attackDamage = other._attackDamage;
+		this->_name = other._name;
+		this->_hitPoints = other._hitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_attackDamage = other._attackDamage;
 	}
 	return *this;
 }
