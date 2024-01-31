@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 17:01:47 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/31 01:29:08 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/31 01:30:50 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string _name;
 		int	_hitPoints;
 		int	_energyPoints;
 		int	_attackDamage;
 
+	private:
 		void useEnergy();
+
 	public:
 
 		ClapTrap();
