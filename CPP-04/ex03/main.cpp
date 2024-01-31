@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:52:04 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/31 16:33:42 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/31 16:41:53 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "Ice.hpp"
 #include "MateriaSource.hpp"
 
-/*
+
 # define BLACK	"\e[30m"
 # define RED	"\e[31m"
 # define GREEN	"\e[32m"
@@ -261,8 +261,9 @@ int	main(void)
 	//school_test();
 	return (0);
 }
-*/
+
 /* SUBJECT TESTS */
+/*
 int main() {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
@@ -287,4 +288,4 @@ int main() {
 
 	return 0;
 }
-
+*/

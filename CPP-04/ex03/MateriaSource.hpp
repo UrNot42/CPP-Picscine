@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:38:34 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/31 15:32:23 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/31 16:41:41 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class MateriaSource : public IMateriaSource {
 
 		void		learnMateria(AMateria*);
 		AMateria*	createMateria(std::string const & type);
+		void displayModels();
 
 	private:
 		AMateria*	_spells[4];

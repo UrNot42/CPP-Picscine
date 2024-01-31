@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:22:15 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/31 16:07:49 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/31 16:39:33 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Character : public ICharacter {
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
 		AMateria* const & getInventory() const;
-
+		void displayInventory();
 };
 
 #endif

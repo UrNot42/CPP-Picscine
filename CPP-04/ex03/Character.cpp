@@ -6,22 +6,24 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:21:57 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/31 16:32:45 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:45:26 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-void	Character::copyInventory(AMateria**	newInventory) {
+void	Character::copyInventory(AMateria*	otherInventory[4]) {
 	AMateria *temp;
 
 	for (unsigned int i = 0; i < 4; i++) {
-		if (newInventory[i] != NULL)
+		if (otherInventory[i])
 		{
-			temp = newInventory[i]->clone();
-			delete newInventory[i];
+			temp = otherInventory[i]->clone();
+			delete otherInventory[i];
 			this->_inventory[i] = temp;
 		}
+		else
+			this->_inventory[i] = NULL;
 	}
 }
 
@@ -35,7 +37,12 @@ Character::Character( std::string name ) : _name(name), _inventory() {
 
 Character::Character( const Character &other ) : _name(other._name){
 	std::cout << "Character Copy constructor called" << std::endl;
-	this->copyInventory((AMateria**)(other._inventory));
+	for (unsigned int i = 0; i < 4; i++) {
+		if (other._inventory[i])
+			this->_inventory[i] = other._inventory[i]->clone();
+		else
+			this->_inventory[i] = NULL;
+	}
 }
 
 Character &	Character::operator=( const Character &other ) {
@@ -47,8 +54,9 @@ Character &	Character::operator=( const Character &other ) {
 
 Character::~Character() {
 	std::cout << "Character Destructor called" << std::endl;
-	for (unsigned int i = 0; i < 4; i++) {
-		if (this->_inventory[i] != NULL)
+	for (unsigned int i = 4; i > 0; ) {
+		i--;
+		if (this->_inventory[i])
 			delete this->_inventory[i];
 	}
 }
@@ -74,5 +82,17 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter& target) {
-	this->_inventory[idx]->use( target );
+	if (this->_inventory[idx])
+		this->_inventory[idx]->use( target );
+}
+
+void Character::displayInventory() {
+	if (this->_inventory[0])
+		std::cout << "Slot [1]: " << this->_inventory[0]->getType() << std::endl;
+	if (this->_inventory[1])
+		std::cout << "Slot [2]: " << this->_inventory[1]->getType() << std::endl;
+	if (this->_inventory[2])
+		std::cout << "Slot [3]: " << this->_inventory[2]->getType() << std::endl;
+	if (this->_inventory[3])
+		std::cout << "Slot [4]: " << this->_inventory[3]->getType() << std::endl;
 }
