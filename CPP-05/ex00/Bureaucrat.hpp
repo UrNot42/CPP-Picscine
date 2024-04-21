@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:08:04 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/04/21 21:03:19 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:17:31 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ class Bureaucrat
 				const char *	what( void ) const throw();
 		};
 };
+
+std::ostream &	operator<<( std::ostream& os, const Bureaucrat & obj );
+
 
 #endif
 

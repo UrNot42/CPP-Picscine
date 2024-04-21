@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:07:58 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/04/21 21:10:03 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:16:53 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	main( void ) {
 	catch ( std::exception & ex ) {
 		std::cout << ex.what() << std::endl;
 	}
-	std::cout << steeve.getGrade() << std::endl;
+	std::cout << steeve << std::endl;
 }

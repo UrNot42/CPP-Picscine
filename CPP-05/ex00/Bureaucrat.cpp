@@ -6,13 +6,13 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:08:02 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/04/21 21:04:24 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:18:43 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name( "" ), _grade( 150 ) {
+Bureaucrat::Bureaucrat() : _name( "anonymous" ), _grade( 150 ) {
 }
 
 Bureaucrat::Bureaucrat( std::string name, short unsigned int grade ) {
@@ -72,4 +72,9 @@ char *	Bureaucrat::checkGradeRange( short unsigned int grade ) {
 		throw ( Bureaucrat::GradeTooLowException() );
 	}
 	return ( 0 );
+}
+
+std::ostream &	operator<<( std::ostream& os, const Bureaucrat & obj ) {
+	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
+	return ( os );
 }
