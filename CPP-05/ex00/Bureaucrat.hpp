@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:08:04 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/04/21 21:17:31 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:29:45 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Bureaucrat
 {
 	private:
-		std::string				_name;
+		const std::string		_name;
 		short unsigned int		_grade;
 		char *					checkGradeRange( short unsigned int );
 
@@ -28,7 +28,7 @@ class Bureaucrat
 		~Bureaucrat();
 		Bureaucrat( const Bureaucrat & src );
 
-		Bureaucrat( std::string, short unsigned int );
+		Bureaucrat( const std::string, short unsigned int );
 
 		Bureaucrat &			operator=( const Bureaucrat & rhs );
 		Bureaucrat &			operator++();

@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:08:02 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/04/21 21:18:43 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:32:07 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 Bureaucrat::Bureaucrat() : _name( "anonymous" ), _grade( 150 ) {
 }
 
-Bureaucrat::Bureaucrat( std::string name, short unsigned int grade ) {
+Bureaucrat::Bureaucrat( const std::string name, short unsigned int grade ) : _name( name ) {
 	checkGradeRange( grade );
-	this -> _name = name;
 	this -> _grade = grade;
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat & src ) {
+Bureaucrat::Bureaucrat( const Bureaucrat & src ) : _name( src . _name) {
 	checkGradeRange( src . _grade );
-	this -> _name = src . _name;
 	this -> _grade = src . _grade;
 }
 
@@ -32,7 +30,6 @@ Bureaucrat::~Bureaucrat() {
 
 Bureaucrat &	Bureaucrat::operator=( const Bureaucrat & rhs ) {
 	checkGradeRange( rhs . _grade );
-	this -> _name = rhs . _name;
 	this -> _grade = rhs . _grade;
 	return ( *this );
 }
