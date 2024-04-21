@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:08:02 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/04/21 21:32:07 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:40:35 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Bureaucrat::Bureaucrat() : _name( "anonymous" ), _grade( 150 ) {
 }
 
-Bureaucrat::Bureaucrat( const std::string name, short unsigned int grade ) : _name( name ) {
+Bureaucrat::Bureaucrat( const std::string name, t_grade grade ) : _name( name ) {
 	checkGradeRange( grade );
 	this -> _grade = grade;
 }
@@ -50,7 +50,7 @@ std::string	Bureaucrat::getName( void ) const {
 	return ( _name );
 }
 
-short unsigned int	Bureaucrat::getGrade( void ) const {
+t_grade	Bureaucrat::getGrade( void ) const {
 	return ( _grade );
 }
 
@@ -61,7 +61,7 @@ const char *	Bureaucrat::GradeTooLowException::what( void ) const throw() {
 const char *	Bureaucrat::GradeTooHighException::what( void ) const throw() {
 	return ( "Grade too High" );
 }
-char *	Bureaucrat::checkGradeRange( short unsigned int grade ) {
+char *	Bureaucrat::checkGradeRange( t_grade grade ) {
 	if ( grade < 1 ) {
 		throw ( Bureaucrat::GradeTooHighException() );
 	}

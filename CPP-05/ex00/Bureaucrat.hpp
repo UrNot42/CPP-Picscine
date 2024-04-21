@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:08:04 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/04/21 21:29:45 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:40:21 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,28 @@
 # include <iostream>
 # include <exception>
 
+typedef short unsigned int	t_grade;
+
 class Bureaucrat
 {
 	private:
-		const std::string		_name;
-		short unsigned int		_grade;
-		char *					checkGradeRange( short unsigned int );
+		const std::string	_name;
+		t_grade				_grade;
+		char *				checkGradeRange( t_grade );
 
 	public:
 		Bureaucrat();
 		~Bureaucrat();
 		Bureaucrat( const Bureaucrat & src );
 
-		Bureaucrat( const std::string, short unsigned int );
+		Bureaucrat( const std::string, t_grade );
 
 		Bureaucrat &			operator=( const Bureaucrat & rhs );
 		Bureaucrat &			operator++();
 		Bureaucrat &			operator--();
 
 		std::string				getName( void ) const;
-		short unsigned int		getGrade( void ) const;
+		t_grade					getGrade( void ) const;
 
 		class GradeTooHighException : public std::exception
 		{
