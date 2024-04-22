@@ -82,6 +82,7 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter& target) {
+	if (idkidx>4)
 	if (this->_inventory[idx])
 		this->_inventory[idx]->use( target );
 }

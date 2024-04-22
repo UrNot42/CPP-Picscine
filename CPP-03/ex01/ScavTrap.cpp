@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 00:54:39 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/31 02:30:30 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/01/31 03:37:14 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ ScavTrap::ScavTrap( const ScavTrap &other )
 {
 	std::cout << "ScavTrap Copy constructor called" << std::endl;
 
-	_name = other._name;
-	_hitPoints = other._hitPoints;
-	_energyPoints = other._energyPoints;
-	_attackDamage = other._attackDamage;
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage = other._attackDamage;
 }
 
 ScavTrap::~ScavTrap()
@@ -46,10 +46,10 @@ ScavTrap &	ScavTrap::operator=( const ScavTrap &other ) {
 	std::cout << "ScavTrap Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
-		_name = other._name;
-		_hitPoints = other._hitPoints;
-		_energyPoints = other._energyPoints;
-		_attackDamage = other._attackDamage;
+		this->_name = other._name;
+		this->_hitPoints = other._hitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_attackDamage = other._attackDamage;
 	}
 	return *this;
 }

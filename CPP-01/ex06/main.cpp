@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:12:50 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/29 12:16:11 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/03/05 19:11:58 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,7 @@ int	main(int argc, char **argv) {
 
 	if (argc > 1)
 		karen.complain(argv[1]);
+	else
+		std::cout << "Please provide a valid message like so:" << std::endl\
+<< "\t./harlFilter [DEBUG / INFO / WARNING / ERROR]" << std::endl;
 }
