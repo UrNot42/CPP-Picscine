@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:08:04 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/04/21 22:01:34 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/04/21 22:01:32 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Bureaucrat
 	private:
 		const std::string	_name;
 		t_grade				_grade;
-		char *				checkGradeRange( t_grade );
+		const char *		checkGradeRange( t_grade );
 
 	public:
 		Bureaucrat();

@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:08:02 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/04/21 21:48:52 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:50:26 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ const char *	Bureaucrat::GradeTooHighException::what( void ) const throw() {
 	return ( "Grade too High" );
 }
 
-char *	Bureaucrat::checkGradeRange( t_grade grade ) {
+const char *	Bureaucrat::checkGradeRange( t_grade grade ) {
 	if ( grade < 1 ) {
 		throw ( Bureaucrat::GradeTooHighException() );
 	}
