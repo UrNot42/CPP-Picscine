@@ -1,4 +1,4 @@
-NAME				=	name
+NAME				=	WrongFormPal
 
 CC					=	c++
 CPPFLAGS			=	-Wall -Wextra -Werror $(VERSIONFLAG)
@@ -10,7 +10,9 @@ DEP_FILES			=	Makefile
 RM					=	rm -f
 
 CPP_SRC				=	$(addprefix $(SRC_DIR), \
-						name.cpp \
+						main.cpp \
+						AForm.cpp \
+						Bureaucrat.cpp \
 						)
 
 OBJS				=	$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o, $(CPP_SRC))
