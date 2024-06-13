@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:22:41 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/04/21 22:01:30 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/06/13 15:11:48 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 
 # include <iostream>
 # include <exception>
+# include "Bureaucrat.hpp"
 
 typedef short unsigned int	t_grade;
+
+class Bureaucrat;
 
 class Form
 {
@@ -26,7 +29,7 @@ class Form
 		const t_grade		_reqToSign;
 		const t_grade		_reqToExecute;
 
-		const char *		checkGradeRange( t_grade );
+		void				checkGradeRange( t_grade );
 
 	public:
 		Form();
@@ -35,10 +38,14 @@ class Form
 
 		Form &	operator= ( const Form & rhs );
 
+		Form( const std::string name, t_grade reqSign, t_grade reqExec);
+
 		std::string			getName( void ) const;
 		bool				getSigned( void ) const;
 		t_grade				getReqToSign( void ) const;
 		t_grade				getReqToExecute( void ) const;
+
+		void				beSigned( const Bureaucrat & obj );
 
 		class GradeTooHighException : public std::exception
 		{

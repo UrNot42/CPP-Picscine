@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:22:30 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/04/22 11:58:17 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/06/13 15:10:31 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ Form::Form( const Form & src )
 _reqToSign( src . _reqToSign ), _reqToExecute( src . _reqToExecute ) {
 	checkGradeRange( _reqToSign );
 	checkGradeRange( _reqToExecute );
+}
+
+Form::Form( const std::string name, t_grade reqSign, t_grade reqExec)
+: _name( name ), _reqToSign( reqSign ), _reqToExecute( reqExec ) {
+	checkGradeRange( reqSign );
+	checkGradeRange( reqExec );
 }
 
 Form::~Form() {
@@ -47,6 +53,14 @@ t_grade	Form::getReqToExecute( void ) const {
 	return ( _reqToExecute );
 }
 
+void	Form::beSigned( const Bureaucrat & obj ) {
+	if ( obj . getGrade() > _reqToSign ) {
+		throw ( GradeTooLowException() );
+	}
+	_signed = true;
+}
+
+
 const char *	Form::GradeTooLowException::what( void ) const throw() {
 	return ( "Grade too Low" );
 }
@@ -55,14 +69,13 @@ const char *	Form::GradeTooHighException::what( void ) const throw() {
 	return ( "Grade too High" );
 }
 
-const char *	Form::checkGradeRange( t_grade grade ) {
+void	Form::checkGradeRange( t_grade grade ) {
 	if ( grade < 1 ) {
-		throw ( Form::GradeTooHighException() );
+		throw ( GradeTooHighException() );
 	}
 	if ( grade > 150 ) {
-		throw ( Form::GradeTooLowException() );
+		throw ( GradeTooLowException() );
 	}
-	return ( 0 );
 }
 
 std::ostream &	operator<<( std::ostream& os, const Form & obj ) {

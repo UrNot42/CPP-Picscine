@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:08:02 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/04/21 21:50:26 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/06/13 15:13:21 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,18 @@ std::string	Bureaucrat::getName( void ) const {
 
 t_grade	Bureaucrat::getGrade( void ) const {
 	return ( _grade );
+}
+
+void	Bureaucrat::signForm( Form & obj ) const {
+	try {
+		obj . beSigned( *this );
+	}
+	catch ( std::exception & ex ) {
+		std::cout << _name << " couldn't sign " << obj . getName() << " because " << ex.what() << "." << std::endl;
+	}
+	if ( obj . getSigned() ) {
+		std::cout << _name << " signed " << obj . getName() << std::endl;
+	}
 }
 
 const char *	Bureaucrat::GradeTooLowException::what( void ) const throw() {
