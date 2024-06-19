@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:22:30 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/06/13 19:27:48 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/06/19 18:29:14 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ AForm::~AForm() {
 
 AForm &	AForm::operator=( const AForm & rhs ) {
 	this -> _signed = rhs . _signed;
-	return (*this);
+	return ( * this );
 }
 
 std::string	AForm::getName( void ) const {
@@ -60,13 +60,16 @@ void	AForm::beSigned( const Bureaucrat & obj ) {
 	_signed = true;
 }
 
-
 const char *	AForm::GradeTooLowException::what( void ) const throw() {
 	return ( "Grade too Low" );
 }
 
 const char *	AForm::GradeTooHighException::what( void ) const throw() {
 	return ( "Grade too High" );
+}
+
+const char *	AForm::FormNotSigned::what( void ) const throw() {
+	return ( "Trying to Use an unsigned Form" );
 }
 
 void	AForm::checkGradeRange( t_grade grade ) {
@@ -85,4 +88,14 @@ std::ostream &	operator<<( std::ostream& os, const AForm & obj ) {
 	os << "\nGrade to sign: " << obj.getReqToSign();
 	os << "\nGrade to execute: " << obj.getReqToExecute();
 	return ( os );
+}
+
+bool	AForm::hasRightsToExecute( Bureaucrat const & executor ) const {
+	if (!_signed) {
+		throw ( FormNotSigned() );
+	}
+	if ( executor . getGrade() > getReqToExecute() ) {
+		throw ( GradeTooLowException() );
+	}
+	return ( true );
 }

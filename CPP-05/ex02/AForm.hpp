@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:22:41 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/06/13 19:27:44 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/06/19 18:27:16 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,22 @@ class AForm
 	public:
 		AForm();
 		AForm( const AForm & src );
-		~AForm();
+		virtual ~AForm() = 0;
 
 		AForm &	operator= ( const AForm & rhs );
 
 		AForm( const std::string name, t_grade reqSign, t_grade reqExec);
 
-		std::string			getName( void ) const;
-		bool				getSigned( void ) const;
-		t_grade				getReqToSign( void ) const;
-		t_grade				getReqToExecute( void ) const;
+		std::string			getName( void ) const ;
+		bool				getSigned( void ) const ;
+		t_grade				getReqToSign( void ) const ;
+		t_grade				getReqToExecute( void ) const ;
 
 		void				beSigned( const Bureaucrat & obj );
+
+		bool				hasRightsToExecute( Bureaucrat const & executor ) const;
+
+		virtual void		execute( Bureaucrat const & executor ) const = 0;
 
 		class GradeTooHighException : public std::exception
 		{
@@ -57,9 +61,14 @@ class AForm
 			public:
 				const char *	what( void ) const throw();
 		};
+		class FormNotSigned : public std::exception
+		{
+			public:
+				const char *	what( void ) const throw();
+		};
 
 };
 
-std::ostream &	operator<<( std::ostream& os, const AForm & obj );
+std::ostream &	operator<< ( std::ostream& os, const AForm & obj );
 
 #endif
