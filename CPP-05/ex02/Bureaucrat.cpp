@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:08:02 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/06/13 15:57:31 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/07/01 15:46:17 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,10 @@ const char *	Bureaucrat::checkGradeRange( t_grade grade ) {
 		throw ( Bureaucrat::GradeTooLowException() );
 	}
 	return ( 0 );
+}
+
+void	Bureaucrat::executeForm( AForm const & form ) {
+	form.execute( *this );
 }
 
 std::ostream &	operator<<( std::ostream& os, const Bureaucrat & obj ) {

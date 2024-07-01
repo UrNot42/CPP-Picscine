@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:59:58 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/06/19 18:25:30 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/06/28 13:11:51 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include <iostream>
+# include <fstream>
 # include "AForm.hpp"
 # include "Bureaucrat.hpp"
 

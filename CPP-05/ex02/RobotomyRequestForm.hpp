@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 13:00:03 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/06/19 18:25:27 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/06/21 16:48:47 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
+# include <sys/time.h>
 # include "AForm.hpp"
 # include "Bureaucrat.hpp"
 
@@ -31,6 +32,7 @@ class RobotomyRequestForm : AForm {
 
 		RobotomyRequestForm( const std::string & target );
 
+		bool		coinflip() const;
 		void		execute( Bureaucrat const & executor ) const;
 };
 

@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:59:28 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/06/19 18:24:18 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/07/01 15:31:05 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,16 @@ void		ShrubberyCreationForm::execute( Bureaucrat const & executor ) const {
 		throw ( GradeTooLowException() );
 	}
 
+	std::ofstream	new_file(getName() + "_shrubbery");
+
+	new_file << " oO    oOo     Oo    oOo       O        " << std::endl;
+	new_file << "oOOo  oO|oO   oOOo    |       o|        " << std::endl;
+	new_file << " \|Oo o|Oo|o   |/   o   O     \|o       " << std::endl;
+	new_file << "  |/   \| Oo   |    O  o|o     |O       " << std::endl;
+	new_file << "  |     |/          |   |      /        " << std::endl;
+	new_file << "        |                     ||        " << std::endl;
+
+	new_file.close();
 }
 
 /*

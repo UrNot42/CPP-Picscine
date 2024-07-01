@@ -6,15 +6,20 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:07:58 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/06/19 13:07:45 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/07/01 15:44:32 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main( void ) {
-	Bureaucrat	steeve;
-	AForm		maggot;
+	Bureaucrat				steeve;
+	ShrubberyCreationForm	Shruby;
+	RobotomyRequestForm		Drilll;
+	PresidentialPardonForm	Zaphod;
 
 	std::cout << "---Testing Bureaucrats grade boundaries---" << std::endl;
 	try {
@@ -37,9 +42,7 @@ int	main( void ) {
 	std::cout << steeve << std::endl;
 	std::cout << "---Testing Form signing---" << std::endl;
 
-	steeve . signForm( maggot );
-	AForm A28( "I am an annoying form", 130, 15 );
-	steeve . signForm( A28 );
+	steeve . signForm( Shruby );
 
 	std::cout << "---Testing forms grade values---" << std::endl;
 
