@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:59:58 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/06/28 13:11:51 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/07/03 11:32:49 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@
 # define REQ_SIGN_SHURBBERY 145
 # define REQ_EXEC_SHURBBERY 137
 
-class ShrubberyCreationForm : AForm {
+class ShrubberyCreationForm : public AForm {
 	public:
-
 		ShrubberyCreationForm();
 		ShrubberyCreationForm( const ShrubberyCreationForm & other );
 		ShrubberyCreationForm &	operator= ( const ShrubberyCreationForm & other );

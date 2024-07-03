@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:59:28 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/07/01 15:31:05 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/07/03 13:26:21 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm( "ShrubberyCreation", REQ_SIGN_SHURBBERY, REQ_EXEC_SHURBBERY ) {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & other ) {
+ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & ) {
 }
 
-ShrubberyCreationForm &	ShrubberyCreationForm::operator=( const ShrubberyCreationForm & other ) {
+ShrubberyCreationForm &	ShrubberyCreationForm::operator=( const ShrubberyCreationForm & ) {
+	return ( * this );
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
@@ -28,19 +29,20 @@ ShrubberyCreationForm::ShrubberyCreationForm( const std::string & target ) : AFo
 }
 
 void		ShrubberyCreationForm::execute( Bureaucrat const & executor ) const {
-	if (!getSigned()) {
+	if ( !getSigned() ) {
 		throw ( FormNotSigned() );
 	}
 	if ( executor . getGrade() > getReqToExecute() ) {
 		throw ( GradeTooLowException() );
 	}
 
-	std::ofstream	new_file(getName() + "_shrubbery");
+	std::string		file_name = executor.getName() + "_shrubbery";
+	std::ofstream	new_file( file_name.c_str() );
 
 	new_file << " oO    oOo     Oo    oOo       O        " << std::endl;
 	new_file << "oOOo  oO|oO   oOOo    |       o|        " << std::endl;
-	new_file << " \|Oo o|Oo|o   |/   o   O     \|o       " << std::endl;
-	new_file << "  |/   \| Oo   |    O  o|o     |O       " << std::endl;
+	new_file << " \\|Oo o|Oo|o   |/   o   O     \\|o       " << std::endl;
+	new_file << "  |/   \\| Oo   |    O  o|o     |O       " << std::endl;
 	new_file << "  |     |/          |   |      /        " << std::endl;
 	new_file << "        |                     ||        " << std::endl;
 

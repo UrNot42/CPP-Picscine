@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:22:30 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/06/19 18:29:14 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/07/03 13:38:51 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ const char *	AForm::GradeTooHighException::what( void ) const throw() {
 }
 
 const char *	AForm::FormNotSigned::what( void ) const throw() {
-	return ( "Trying to Use an unsigned Form" );
+	return ( "Trying to Execute an unsigned Form" );
 }
 
 void	AForm::checkGradeRange( t_grade grade ) {
