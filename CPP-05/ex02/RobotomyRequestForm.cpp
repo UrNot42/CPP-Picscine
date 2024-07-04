@@ -6,16 +6,16 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 13:05:27 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/07/03 13:33:51 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/07/04 11:38:52 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm( "RobotomyRequest", REQ_SIGN_ROBOTOMY, REQ_EXEC_ROBOTOMY ) {
+RobotomyRequestForm::RobotomyRequestForm() : AForm( "Default_Robot", REQ_SIGN_ROBOTOMY, REQ_EXEC_ROBOTOMY ) {
 }
 
-RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & ) {
+RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & source ) : AForm( source.getName(), REQ_SIGN_ROBOTOMY, REQ_EXEC_ROBOTOMY ) {
 }
 
 RobotomyRequestForm &	RobotomyRequestForm::operator=( const RobotomyRequestForm & ) {
@@ -43,7 +43,7 @@ void	RobotomyRequestForm::execute( Bureaucrat const & executor ) const {
 
 	std::cout << "* * * Dzzz dzzz dzz dzz dzz * * *" << std::endl;
 
-	std::cout << executor.getName();
+	std::cout << getName();
 
 	if ( coinflip() )
 		std::cout << " has been robotomized";

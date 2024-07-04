@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:07:58 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/07/03 13:41:06 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/07/04 11:59:27 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int	main( void ) {
 	std::cout << steeve << std::endl << std::endl;
 	std::cout << "---Testing Form signing---" << std::endl;
 
-	ShrubberyCreationForm	Shruby;
-	RobotomyRequestForm		Drilll;
-	PresidentialPardonForm	Zaphod;
+	ShrubberyCreationForm	Shruby( "home" );
+	RobotomyRequestForm		Drilll( "A hamster" );
+	PresidentialPardonForm	Zaphod( "All the Dolphin" );
 
 	ShrubberyCreationForm	Unsigned_form;
 
