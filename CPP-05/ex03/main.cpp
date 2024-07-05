@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:07:58 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/07/04 13:30:40 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/07/05 18:24:22 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main( void ) {
-	Bureaucrat				steeve;
+	Bureaucrat	steeve;
 
 	std::cout << "---Testing Bureaucrats grade boundaries---" << std::endl;
 	try {
@@ -96,10 +97,20 @@ int	main( void ) {
 
 	michel_3 . executeForm( Zaphod );
 
-	std::cout << std::endl << "---Testing for Unsigned Forms ---" << std::endl;
+	std::cout << std::endl << "--- Testing for Unsigned Forms ---" << std::endl;
 
 	michel_0 . executeForm( Unsigned_form );
 	michel_1 . executeForm( Unsigned_form );
 	michel_2 . executeForm( Unsigned_form );
 	michel_3 . executeForm( Unsigned_form );
+
+	std::cout << std::endl << "--- Testing Intern ---" << std::endl;
+
+	Intern	Titouan;
+
+	AForm * neighborhood_park = Titouan.makeForm( "shrubbery creation", "my_local" );
+
+	michel_3 . signForm( * neighborhood_park );
+
+	michel_3 . executeForm( * neighborhood_park);
 }
