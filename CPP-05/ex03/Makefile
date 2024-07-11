@@ -16,6 +16,7 @@ CPP_SRC				=	$(addprefix $(SRC_DIR), \
 						RobotomyRequestForm.cpp \
 						ShrubberyCreationForm.cpp \
 						PresidentialPardonForm.cpp \
+						Intern.cpp \
 						)
 
 OBJS				=	$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o, $(CPP_SRC))
