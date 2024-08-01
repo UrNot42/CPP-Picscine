@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:41:19 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/29 13:07:57 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/08/01 20:11:38 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 #define N_ZOMBIES 10
 
-int	main() {
-	Zombie*	zombie;
+int main() {
+	Zombie * zombie;
 
-	zombie = zombieHorde(N_ZOMBIES, "Fou");
-	for (int i = 0; i < N_ZOMBIES; i++)
+	zombie = zombieHorde( N_ZOMBIES, "Fou" );
+	for ( int i = 0; i < N_ZOMBIES; i++ ) {
 		zombie[i].announce();
+	}
 	delete[] zombie;
 }

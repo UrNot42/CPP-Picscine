@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 00:21:42 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/24 20:04:37 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/08/01 20:11:59 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,42 @@
 
 Contact::Contact() {}
 
-static std::string	prompt(const char *display) {
-	std::string	str;
+static std::string prompt( const char * display ) {
+	std::string str;
 
 	std::cout << display << ": " << std::flush;
-	while(!std::getline(std::cin, str) || !str.size()) {
+	while ( ! std::getline( std::cin, str ) || ! str.size() ) {
 		std::cin.clear();
-		std::clearerr(stdin);
+		std::clearerr( stdin );
 		std::cout << std::endl << display << ": " << std::flush;
 	}
 	return str;
 }
 
-void	Contact::fill_contact() {
-	this->first_name = prompt("(1) Contact first Name");
-	this->last_name = prompt("(2) Contact last Name");
-	this->nickname = prompt("(3) Contact Nickname");
-	this->phone_number = prompt("(4) Contact Phone Number");
-	this->darkest_secret = prompt("(5) And contact's darkest secret");
+void Contact::fill_contact() {
+	this->first_name	 = prompt( "(1) Contact first Name" );
+	this->last_name		 = prompt( "(2) Contact last Name" );
+	this->nickname		 = prompt( "(3) Contact Nickname" );
+	this->phone_number	 = prompt( "(4) Contact Phone Number" );
+	this->darkest_secret = prompt( "(5) And contact's darkest secret" );
 }
 
-static void	display_element(std::string str)
-{
-	if (str.size() > 10)
+static void display_element( std::string str ) {
+	if ( str.size() > 10 ) {
 		str[9] = '.';
-	std::cout << std::setw(10) << str.substr(0,10) << "|";
+	}
+	std::cout << std::setw( 10 ) << str.substr( 0, 10 ) << "|";
 }
 
-void	Contact::display_contact(size_t index) {
-	std::cout << "|" << std::setw(10) << index << "|";
-	display_element(this->first_name);
-	display_element(this->last_name);
-	display_element(this->nickname);
+void Contact::display_contact( size_t index ) {
+	std::cout << "|" << std::setw( 10 ) << index << "|";
+	display_element( this->first_name );
+	display_element( this->last_name );
+	display_element( this->nickname );
 	std::cout << std::endl;
 }
 
-void	Contact::print_contact_details() {
+void Contact::print_contact_details() {
 	std::cout << "First name: " << this->first_name << std::endl;
 	std::cout << "Last name: " << this->last_name << std::endl;
 	std::cout << "Nickname: " << this->nickname << std::endl;
@@ -57,15 +57,15 @@ void	Contact::print_contact_details() {
 	std::cout << "Darkest secret: " << this->darkest_secret << std::endl;
 }
 
-std::string	Contact::get_first_name() {
+std::string Contact::get_first_name() {
 	return this->first_name;
 }
 
-std::string	Contact::get_last_name() {
+std::string Contact::get_last_name() {
 	return this->last_name;
 }
 
-std::string	Contact::get_nickname() {
+std::string Contact::get_nickname() {
 	return this->nickname;
 }
 

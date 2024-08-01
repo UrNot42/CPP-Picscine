@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 18:57:39 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/29 13:20:39 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/08/01 20:13:39 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 #include "Weapon.hpp"
 
 class HumanA {
-public:
-	HumanA(std::string name, Weapon &equipement);
-	void	attack();
-private:
-	std::string	name;
-	Weapon&	equipement;
+	public:
+		HumanA( std::string name, Weapon & equipement );
+		void attack();
+
+	private:
+		std::string name;
+		Weapon &	equipement;
 };

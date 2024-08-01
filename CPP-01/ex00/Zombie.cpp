@@ -6,13 +6,13 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:55:45 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/25 18:27:16 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/08/01 20:11:41 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name) : name(name) {
+Zombie::Zombie( std::string name ) : name( name ) {
 	std::cout << "Created " << this->name << std::endl;
 }
 
@@ -20,6 +20,6 @@ Zombie::~Zombie() {
 	std::cout << "Destroyed " << this->name << std::endl;
 }
 
-void	Zombie::announce() {
+void Zombie::announce() {
 	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

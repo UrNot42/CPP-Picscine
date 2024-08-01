@@ -6,30 +6,35 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:54:13 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/01/30 18:53:27 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/08/01 20:15:23 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point() : x(0.0f), y(0.0f) {}
+Point::Point() : x( 0.0f ), y( 0.0f ) {}
 
-Point::Point(float const x, float const y) : x(x), y(y) {}
+Point::Point( const float x, const float y ) : x( x ), y( y ) {}
 
-Point::Point(const Point &other) : x(other.x), y(other.y) {}
+Point::Point( const Point & other ) : x( other.x ), y( other.y ) {}
 
-Point &Point::operator=(const Point &other)
-{
-	if (this == &other)
+Point & Point::operator=( const Point & other ) {
+	if ( this == &other ) {
 		return *this;
+	}
 
-	const_cast<Fixed &>(this->x) = other.x;
-	const_cast<Fixed &>(this->y) = other.y;
+	const_cast<Fixed &>( this->x ) = other.x;
+	const_cast<Fixed &>( this->y ) = other.y;
 
 	return *this;
 }
 
 Point::~Point() {}
 
-Fixed Point::getX() const { return x; }
-Fixed Point::getY() const { return y; }
+Fixed Point::getX() const {
+	return x;
+}
+
+Fixed Point::getY() const {
+	return y;
+}
