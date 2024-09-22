@@ -1,28 +1,43 @@
-NAME = Iter
-SRCS = main.cpp
-OBJDIR_SRCS = obj
-OBJS = $(addprefix $(OBJDIR_SRCS)/,$(SRCS:.cpp=.o))
-CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
-RM = rm -f
+NAME				=	Iter
+
+CC					=	c++
+CPPFLAGS			=	-Wall -Wextra -Werror $(VERSIONFLAG)
+VERSIONFLAG			=	-std=c++98
+DBFLAGS				=	-g -g3
+SRC_DIR				=	./
+OBJ_DIR				=	.build/
+DEP_FILES			=	Makefile
+RM					=	rm -f
+
+CPP_SRC				=	$(addprefix $(SRC_DIR), \
+						main.cpp \
+						)
+
+OBJS				=	$(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o, $(CPP_SRC))
 
 all: $(NAME)
 
-$(OBJDIR_SRCS):
-	@mkdir -p $(OBJDIR_SRCS)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(DEP_FILES)
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(dir $@)
+	@$(CC) $(CPPFLAGS) -c -o $@ $<
 
-$(OBJDIR_SRCS)/%.o: %.cpp | $(OBJDIR_SRCS)
-	@$(CC) $(CFLAGS) -c $< -o $@
-
-$(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(DEP_FILES)
+	@echo "\e[36mMaking $(NAME)...\e[0m"
+	@$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+	@echo "\e[32mDone !\e[0m"
 
 clean:
-	@$(RM) -rf $(OBJDIR_SRCS)
+	@rm -rf $(OBJ_DIR)
+	@echo "\e[31mObject files removed.\e[0m"
 
-fclean: clean
+fclean:	clean
 	@$(RM) $(NAME)
+	@echo "\e[31m$(NAME) removed.\e[0m"
 
-re: fclean all
+re:		fclean all
 
-.PHONY: all clean fclean re
+clear:
+	clear
+
+.PHONY = all clean fclean re

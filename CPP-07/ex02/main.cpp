@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 04:57:09 by gde-carv          #+#    #+#             */
-/*   Updated: 2024/08/01 20:28:57 by ulevallo         ###   ########.fr       */
+/*   Created: 2024/01/16 04:57:09 by ulevallo          #+#    #+#             */
+/*   Updated: 2024/09/21 12:42:01 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ int main() {
 	} catch ( const std::exception & e ) {
 		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
-
-	return 0;
+	return ( 0 );
 }
