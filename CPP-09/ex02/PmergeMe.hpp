@@ -6,7 +6,7 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 16:40:27 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/09/20 10:48:27 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/09/24 14:25:15 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool isValidNumber( const std::string & in );
 bool isValidInput( char ** av );
 
 template <typename Container>
-void printBefore( Container & container, const char * label );
+void printContainer( Container & container, const char * label );
 
 template <typename Container>
 void fillContainer( Container & container, char ** av );
@@ -44,10 +44,7 @@ template <typename Container>
 void containerMergeInsertionSort( Container & container );
 
 template <typename Container>
-void sortContainer( Container & container, char ** av, double & time );
-
-template <typename Container>
-void printContainerAfter( Container & container );
+void sortContainer( Container & container, double & time );
 
 #include "PmergeMe.tpp"
 

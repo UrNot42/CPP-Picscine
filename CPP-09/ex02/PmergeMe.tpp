@@ -6,12 +6,12 @@
 /*   By: ulevallo <ulevallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 02:16:24 by ulevallo          #+#    #+#             */
-/*   Updated: 2024/09/20 10:48:27 by ulevallo         ###   ########.fr       */
+/*   Updated: 2024/09/24 14:25:26 by ulevallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 template <typename Container>
-void printBefore( Container & container, const char * label ) {
+void printContainer( Container & container, const char * label ) {
 	std::cout << label << ":\t";
 	for ( typename Container::iterator it = container.begin(); it != container.end(); ++it ) {
 		std::cout << *it << " ";
@@ -21,7 +21,7 @@ void printBefore( Container & container, const char * label ) {
 
 template <typename Container>
 void fillContainer( Container & container, char ** av ) {
-	for ( int i = 0; av[i]; ++i ) {
+	for ( int i = 1; av[i]; ++i ) {
 		container.push_back( std::atoi( av[i] ) );
 	}
 }
@@ -70,23 +70,11 @@ void containerMergeInsertionSort( Container & container ) {
 }
 
 template <typename Container>
-void sortContainer( Container & container, char ** av, double & time ) {
+void sortContainer( Container & container, double & time ) {
 	clock_t start = clock();
 
-	fillContainer( container, av );
 	containerMergeInsertionSort( container );
 
 	clock_t end = clock();
 	time		= ( double ) ( end - start ) / ( ( double ) CLOCKS_PER_SEC / 1000 );
-}
-
-template <typename Container>
-void printContainerAfter( Container & container ) {
-	typename Container::const_iterator it;
-
-	std::cout << "After:\t";
-	for ( it = container.begin(); it != container.end(); ++it ) {
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
 }
